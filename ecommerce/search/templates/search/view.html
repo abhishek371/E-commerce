@@ -1,14 +1,24 @@
 {% extends "base.html" %}
-	
-{% block title %}E-Kart | Products {% endblock %}
-
+{% block title %}E-Kart | Search {% endblock %}
 {% block content %}
+<br>
 <div class="container">
-		<div class="jumbotron">
-			<h1>Welcome to our Lifestyle Store!</h1>
-			<p> We have the best cameras, watches and shirts for you. No need to hunt around, we have all in one place.</p>
+<div class="row mb-3">
+{% if request.GET.q %}
+	<div class="col-12">
+		<h4>Result for <b>{{request.GET.q}}</b></h4>
+		<hr/>
+	</div>
+	{% else %}
+	<div class="col-12 col-md-6 mx-auto py-5">
+		{% include 'search/snippets/search-form.html' %}
+	</div>
+	<div class="col-12">
+		<hr>
+	</div>
+	{% endif %}
+</div>
 
-		</div>
 <div class="row">
 	{% for obj in object_list %}
 	<div class="col">
