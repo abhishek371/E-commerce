@@ -43,6 +43,11 @@
       </ul>
       {% include 'search/snippets/search-form.html' %}
     </div>
+    <div>
+    <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+          <a class="nav-link" href="{%url 'login' %}">Login</a>
+        </li></ul></div>
   </nav>
   {% block content %}
   {% endblock%}
