@@ -9,6 +9,14 @@
           <h1>We sell lifestyle</h1>
           <p>Flat 40% OFF on premium brands</p>
           <a href="{% url 'products:prod-list' %}" class="button" style="text-decoration: none;">Shop Now</a>
+          {% if request.user.is_authenticated %}
+        <div class='row'>
+          <div class='col'>
+          <h1>Premium</h1>
+          {{ premium_content }}
+          </div>
+        </div>
+        {% endif %}
 
         </div>
       </div>
